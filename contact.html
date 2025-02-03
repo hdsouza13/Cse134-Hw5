@@ -4,24 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact me</title>
+    <style>
+        col{
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
     <main>
         <table>
             <caption><b>My informations</b></caption>
-            <tr>
-                <th>Email</th>
-                <th>Number</th>
-            </tr>
-            <tr>
-                <td>email</td>
-                <td>number</td>
-            </tr>
+            <colgroup>
+                <col>
+                <tr>
+                    <th>Email</th>
+                    <th>Number</th>
+                </tr>
+                <tr>
+                    <td>hugo.xvsouza@yahoo.com.br</td>
+                    <td>553-43423434</td>
+                </tr>
+                <col>
+              </colgroup>
         </table>
         <address>4232 New Port Village</address>
         <h3>Any question?</h3>
         <textarea name="question" id="question">Put your question here</textarea>
         <button>Send</button>
+        <p>Are you going to hire me? <del>No</del> <ins>Sure</ins>!</p>
     </main>
 </body>
 </html>
