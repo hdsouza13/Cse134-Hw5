@@ -14,6 +14,10 @@
             text-align: center;
             font-weight: bold;
         }
+
+        pre{
+            font-size: 1.5em;
+        }
     </style>
 </head>
 <body>
@@ -33,9 +37,6 @@
                 <li>
                     <a href="contact.html">Contact me</a>
                 </li>
-                <li>
-                    <a href="extracredit.html">Extra Credit</a>
-                </li>
             </ul>
         </nav>
     </header>
@@ -43,109 +44,25 @@
     <main>
         <h1>Hugo D Souza</h1>
         <section>
-            <h2><b>Who I am</b></h2>
+            <h2 id="who">Who I am</h2>
+            <div id="position">
             <picture>
-                <img src="UCSDphoto.jpg" alt="Picture Profile">
+                <img src="UCSDphoto.jpg" alt="Picture Profile" id="profilepic">
             </picture>
-            <div>
             <pre>
-            Hi, my name is Hugo. 
-                I live in Brazil, 
-                and I'm currently studying Computer Engineering at 
+                Hi, my name is Hugo. 
+                I live in Brazil, and I'm currently studying Computer Engineering at 
                 the <cite>University of California San Diego</cite>. 
                 This is my website portfolio where you can learn a little 
                 about me and the projects I've worked on,
-                 in an organized and detailed way.
+                in an organized and detailed way.
             </pre>
             </div>
         </section>
-        <section>
-            <h2><strong>Favorite Programming Language</strong></h2>
-            <form>
-                <fieldset>
-                  <legend>Choose your favorite Programming Language</legend>
-              
-                  <input type="radio" id="C++" name="C++" value="C++" />
-                  <label for="C++">C++</label><br />
-              
-                  <input type="radio" id="Phyton" name="Phyton" value="Phyton" />
-                  <label for="Phyton">Phyton</label><br />
-              
-                  <input type="radio" id="Java" name="Java" value="Java" />
-                  <label for="Java">Java</label>
-                </fieldset>
-              </form>
-              <hr>
-        </section>
-        <section>
-            <h2>Favorite Dog or Cat</h2>
-            <form action="/action_page.php">
-                <label for="dogscats">Choose a dog or cat:</label>
-                <select name="dogscats" id="dogscats">
-                  <optgroup label="Dogs">
-                    <option value="germanPastor">German Pastor</option>
-                    <option value="shihTzu">Shih Tzu</option>
-                  </optgroup>
-                  <optgroup label="Cats">
-                    <option value="aegean">Aegeans</option>
-                    <option value="americanCurl">American Curl</option>
-                  </optgroup>
-                </select>
-                <br><br>
-                <input type="submit" value="Submit">
-              </form>
-        </section>
         <hr>
-        <section>
-            <form action="/action_page.php" method="get">
-                <label for="browser">Choose your browser from the list:</label>
-                <input list="browsers" name="browser" id="browser">
-                <datalist id="browsers">
-                  <option value="Edge">
-                  <option value="Firefox">
-                  <option value="Chrome">
-                  <option value="Opera">
-                  <option value="Safari">
-                </datalist>
-                <input type="submit">
-            </form>
-        </section>
+        <blockquote cite="https://www.azquotes.com/author/30249-Ron_Jeffries" id="quote">Code never lies, comments sometimes do</blockquote>
         <hr>
-        <blockquote cite="https://www.azquotes.com/author/30249-Ron_Jeffries">Code never lies,comments sometimes do</blockquote>
-        <hr>
-
     </main>
-    <footer>
-        <p>Press <kbd>Ctrl</kbd> + <kbd>N</kbd> to go the next page.</p>
-        <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
-            Your browser does not support the HTML canvas tag.</canvas>
-            <script>
-            var c = document.getElementById("myCanvas");
-            var ctx = c.getContext("2d");
-            ctx.beginPath();
-            ctx.arc(95,50,40,0,2*Math.PI);
-            ctx.stroke();
-            </script>
-            <noscript>Sorry, your browser does not support JavaScript!</noscript> 
-
-         <svg width="100" height="100">
-            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
-         </svg>
-    
-        <hello-world></hello-world>
-
-        <script>
-            class HelloWorld extends HTMLElement {
-                constructor() {
-                    super();
-                    console.log("Hello World!");
-                }
-            }
-            customElements.define('hello-world', HelloWorld);
-        </script>
-         <styled-box>
-         </styled-box>
-
         <aside><span>@CopyRight</span></aside>
     </footer>
 </body>

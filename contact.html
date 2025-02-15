@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Contact me</title>
     <style>
-        col{
-            background-color: yellow;
+        h1{
+            display: flex;
+            justify-content: center;
+        }
+        table {
+            margin-left: 10%;
+        }
+        th, td {
+            border: 1px solid black; /* Add border to table cells */
+            padding: 8px; /* Add padding for better spacing */
+            text-align: left;
         }
     </style>
 </head>
 <body>
     <main>
-        <table>
-            <caption><b>My informations</b></caption>
+        <h1>My informations</h1>
+        <table id="table">
             <colgroup>
                 <col>
                 <tr>
@@ -27,15 +37,11 @@
                 <col>
               </colgroup>
         </table>
+        <br>
         <address>4232 New Port Village, <abbr title="California">CA</abbr></address>
         <h3>Any question?</h3>
         <textarea name="question" id="question">Put your question here</textarea>
         <button>Send</button>
-        <p>Are you going to hire me? <del>No</del> <ins>Sure</ins>!</p>
-        <p>Lower the volume before listen it</p>
-        <audio controls>
-            <source src="sound4.wav" type="audio/wav">
-        </audio>
     </main>
     <footer>
         <dialog open>Go to Main Page</dialog>

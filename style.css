@@ -1,18 +1,38 @@
 #header{
     display: flex;
     justify-content: center;
+    background-color: aqua;
 }
 
 #links {
     display: flex;
-    list-style-type: none; 
-    padding: 0;
+    gap: 20em;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-#links li {
-    margin-right: 10px;
+#who{
+    display: flex;
+    justify-content: center;
 }
 
-#links li:last-child {
-    margin-right: 0;
+#profilepic{
+    border-radius: 8px;
+    width: 20em;
+    border: 1px solid #ddd;
+    margin-left: 10em;
 }
+
+#position{
+    display: flex;
+}
+
+#quote{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
