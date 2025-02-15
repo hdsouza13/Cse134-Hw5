@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <main>
-        <section>
-            <h2>Proj1</h2>
-            <h3>Nasa California Space Grant Consortium</h3>
-            <p><em>The Lunar Lava Tube Exploration</em> challenges teams to explore a lunar lava tube with an eye toward its potential for human
-                habitation. The overall challenge is building a rover and developing programs that allow the rover to navigate the
-                challenge course, a model lunar lava tube using an arduino</p>
+        <h1>My Projects</h1>
+        <h2>Nasa California Space Grant Consortium</h2>
+        <section id="nasa">
+            <img src="nasa.jpg" alt="Nasa Logo" id="nasapic">
+            <p id="nasainf"><em>The Lunar Lava Tube Exploration</em> challenge tasks teams with exploring a lunar lava tube, assessing its potential for human habitation. 
+                The challenge involves building a rover and developing programs that enable the rover to navigate a model lunar lava tube. 
+                I was responsible for the coding aspect of this project, implementing the navigation 
+                programs using Arduino to control the rover's movement and decision-making in the simulated environment.</p>
         </section>
-        <section>
-            <h2>Proj2</h2>
-            <hgroup>
-            <h3>Regency Young Scholar Science Program</h3>
-            <p>
+        <h2>Regency Young Scholar Science Program</h2>
+        <section id="regency">
+                <img src="IMG_0021.jpg" alt="Experiment with the kids" id="regencypic">
+            <p id="regencyinf">
                 <dfn>The Regency Young Scholar Science Program</dfn> aims to bridge the gap 
                 in science education for children who may not have access to hands-on learning 
                 experiences. Through engaging experiments and activities, the program introduces
@@ -29,35 +36,29 @@
                  The program strives to inspire a lifelong passion for science, 
                  encouraging children to see the world through an analytical lens 
                  and empowering them to become future innovators and leaders in 
-                 their communities.
+                 their communities. I was one of the individuals responsible for teaching the kids, 
+                 guiding them through experiments and 
+                 activities to help them develop a deeper understanding of scientific concepts.
             </p>
-            </hgroup>
-            <figure>
-                <img src="IMG_0021.jpg" alt="Experiment with the kids">
-                <figcaption><i>Experiment with the kids</i></figcaption>
-            </figure>
         </section>
-        <section>
-            <h2>Proj3</h2>
-            <h3>Website project</h3>
-            <video controls>
+        <h2>Website project</h2>
+        <section id="website">
+            <video controls width="420" height="240" id="webvideo">
                 <source src="team 5 figma board – Figma - Google Chrome 2024-05-26 02-34-45.mp4" type="video/mp4">
             </video>
-            <p>This Video show a little design of the website project that I participated</p>
-            <template>
-                <div>
-                    <p>This content is inside the template and will not be displayed initially.</p>
-                </div>
-            </template>
+            <p id="videoinf">This video showcases a preliminary design of the website project that I participated in. My group and I created a DevJournal website based on the design we developed. 
+                The website was built to provide a structured and engaging platform for developers to document their projects, share insights, and collaborate. 
+                From conceptualizing the user interface in Figma to implementing the final web application, 
+                our team worked together to bring the design to life, 
+                ensuring both functionality and an intuitive user experience.</p>
         </section>
+        <div id="homepage">
+            <a href="index.html">Home Page</a>  
+        </div>
+        <hr>
     </main>
     <footer>
-        <h2>Which Project you most liked?</h2>
-        <select name="projects" id="projects">
-            <option value="proj1">Proj1</option>
-            <option value="proj2">Proj2</option>
-            <option value="proj3">Proj3</option>
-          </select>
+        <aside><span>@CopyRight</span></aside>
     </footer>
 </body>
 </html>
