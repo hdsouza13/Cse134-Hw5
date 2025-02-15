@@ -1,0 +1,18 @@
+#header{
+    display: flex;
+    justify-content: center;
+}
+
+#links {
+    display: flex;
+    list-style-type: none; 
+    padding: 0;
+}
+
+#links li {
+    margin-right: 10px;
+}
+
+#links li:last-child {
+    margin-right: 0;
+}
