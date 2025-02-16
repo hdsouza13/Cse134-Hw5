@@ -3,56 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Skills and Hobbies</title>
     <style>
-        h1{
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #444;
+        }
+        h1 {
             text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #444;
+            padding-bottom: 10px;
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background: #e7e7e7;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .degrees {
+            font-style: italic;
+            color: #555;
         }
     </style>
 </head>
 <body>
-    <main>
-        <h1>About me</h1>
-        <h2>Skills</h2>
-        <section>
-        <h3>Computer Science:</h3>
-        <ol>
-            <li><code>C++</code></li>
-            <li><code>Phyton</code></li>
-            <li><code>Java</code></li>
-            <li><code>HTML</code></li>
-            <li><code>CSS</code></li>
-            <li><code>JavaScript</code></li>
-        </ol>
-        </section>
-        <h3>Language:</h3>
+    <div class="container">
+        <h1>Skills and Hobbies</h1>
+        
+        <h2>Computer Science</h2>
+        <ul>
+            <li>C++</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+        
+        <h2>Language</h2>
         <ul>
             <li>Portuguese</li>
             <li>English</li>
             <li>Spanish</li>
         </ul>
-        <h3>Hobbies</h3>
-        <details>
-            <summary>Free Time</summary>
-                <ul>
-                    <li>Tennis</li>
-                    <li>Gym</li>
-                    <li>Play Video Games</li>
-                </ul>
-          </details>
-        <h3>Degrees</h3>
+        
+        <h2>Hobbies</h2>
         <ul>
-            <li>School Degree</li>
-            <li>Associate in Scinence Degree</li>
+            <li>Tennis</li>
+            <li>Gym</li>
+            <li>Play Video Games</li>
         </ul>
-          <h3>Favorites Drinks</h3>
-        <dl>
-            <dt>Milshake</dt>
-            <dd>Oreo Flavor</dd>
-            <dt>Milk</dt>
-            <dd>Milk with chocolate</dd>
-        </dl>
-
-    </main>
+        
+        <h2>Degrees</h2>
+        <p class="degrees">School Degree</p>
+        <p class="degrees">Associate Degree</p>
+    </div>
+    <div id="homepage">
+        <a href="index.html">Home Page</a>  
+    </div>
+    <hr>
+</main>
+<footer>
+    <aside><span>@CopyRight</span></aside>
+</footer>
 </body>
 </html>
