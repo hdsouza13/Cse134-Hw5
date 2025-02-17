@@ -76,13 +76,26 @@ button:hover {
 
 #homepage {
     text-align: center;
-    margin: var(--spacing-unit) 0;
+    width: 100px; /* Adjust width as needed */
+    height: 40px; /* Adjust height to make it rectangular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black; /* Optional: Adds a border */
+    background-color: lightgray; /* Optional: Adds background color */
+    margin: auto; /* Centers the box */
+    padding: 5px; /* Adjust padding */
+    border-radius: 5px; /* Optional: Adds rounded corners */
 }
 
 #homepage a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
+    text-decoration: none; /* Removes underline */
+    color: black; /* Adjust text color */
+    font-weight: bold; /* Makes text bold */
+}
+
+#homepage:hover {
+    background-color: darkgray; /* Changes background on hover */
 }
 
 footer {
