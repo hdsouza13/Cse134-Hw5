@@ -1,0 +1,150 @@
+ /* CSS Variables with Fallbacks */
+ :root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --font-family: 'Open Sans', sans-serif;
+    --fallback-font: Arial, sans-serif;
+    --max-width: 1200px;
+    --spacing-unit: 1rem;
+}
+
+body {
+    font-family: var(--font-family), var(--fallback-font);
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-unit);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    animation: fadeIn 2s ease-in-out;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-unit) 0;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+address {
+    font-style: normal;
+    margin: var(--spacing-unit) 0;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin: var(--spacing-unit) 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: color-mix(var(--secondary-color), black 10%);
+}
+
+#homepage {
+    text-align: center;
+    margin: var(--spacing-unit) 0;
+}
+
+#homepage a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: var(--spacing-unit);
+    background-color: #333;
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    th, td {
+        padding: 0.5rem;
+    }
+
+    textarea {
+        font-size: 0.9rem;
+    }
+
+    button {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    textarea {
+        font-size: 0.8rem;
+    }
+}
+
+/* Advanced CSS Features */
+.highlight {
+    color: color(display-p3 1 0.5 0);
+}
+
+/* Nested and Scoped CSS (Extra Credit) */
+main {
+    & h3 {
+        color: var(--secondary-color);
+        font-size: 1.25rem;
+    }
+
+    & address {
+        font-size: 1rem;
+    }
+}
