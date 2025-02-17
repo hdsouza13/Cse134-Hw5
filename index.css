@@ -1,0 +1,181 @@
+/* CSS Variables with Fallbacks */
+:root {
+    --primary-color: #2c5282;
+    --secondary-color: #e2e8f0;
+    --accent-color: color-mix(in srgb, white, lightblue 40%);
+    --text-color: #2d3748;
+    --font-main: 'Arial', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-main, sans-serif);
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color, #f0f4f8);
+    color: var(--text-color, #2d3748);
+}
+
+/* Custom Fonts with Fallback */
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Regular.woff2') format('woff2'),
+         url('Poppins-Regular.woff') format('woff');
+    font-display: swap;
+}
+
+header {
+    background-color: var(--primary-color, #2c5282);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 2.5em); /* Responsive font size */
+}
+
+/* Responsive Navigation */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color, lightblue);
+    transform: scale(1.1);
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Using Viewport Units */
+h1, h2 {
+    color: color-mix(in srgb, plum, #f00, 10%);
+}
+
+#position {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#profilepic {
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #2c5282;
+}
+
+/* Code Block Styling */
+pre {
+    font-size: 1.2em;
+    line-height: 1.6;
+    background-color: var(--secondary-color, #e2e8f0);
+    padding: 1rem;
+    border-radius: 5px;
+    flex: 1;
+    color: #4a5568;
+}
+
+/* Blockquote */
+blockquote {
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: var(--secondary-color, #e2e8f0);
+    border-left: 5px solid var(--primary-color, #2c5282);
+    color: #4a5568;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--primary-color, #2c5282);
+    color: white;
+    margin-top: 2rem;
+}
+
+/* Subtle Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header, main, footer {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #position {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #profilepic {
+        width: 20dvw;
+        height: 20dvh;
+        margin: 1rem auto;
+    }
+
+    main {
+        max-width: 90%;
+    }
+}
+
+/* Small Screens */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    pre {
+        font-size: 12px;  
+        padding: 10px;    
+    }
+    
+}
