@@ -145,11 +145,6 @@ footer {
     }
 }
 
-/* Advanced CSS Features */
-.highlight {
-    color: color(display-p3 1 0.5 0);
-}
-
 /* Nested and Scoped CSS (Extra Credit) */
 main {
     & h3 {
