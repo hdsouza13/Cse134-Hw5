@@ -1,15 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
 /* CSS Variables with Fallbacks */
 :root {
     --primary-color: #2c5282;
     --secondary-color: #e2e8f0;
     --accent-color: color-mix(in srgb, white, lightblue 40%);
     --text-color: #2d3748;
-    --font-main: 'Arial', sans-serif;
-    --font-heading: 'Poppins', sans-serif;
+    --font-main: 'Roboto', 'Arial', sans-serif; /* Custom font with fallback */
+    --font-heading: 'Poppins', 'Verdana', sans-serif; /* Custom font with fallback */
 }
 
 body {
-    font-family: var(--font-main, sans-serif);
+    font-family: var(--font-main, 'Arial', sans-serif);
     margin: 0;
     padding: 0;
     background-color: var(--secondary-color, #f0f4f8);
@@ -26,6 +28,7 @@ header {
 header h1 {
     margin: 0;
     font-size: clamp(2rem, 5vw, 2.5em); /* Responsive font size */
+    font-family: var(--font-heading, 'Verdana', sans-serif); /* Custom font with fallback */
 }
 
 /* Responsive Navigation */
@@ -45,6 +48,7 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-family: var(--font-heading, 'Verdana', sans-serif); /* Custom font with fallback */
     font-weight: bold;
     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
@@ -64,6 +68,7 @@ main {
 /* Using Viewport Units */
 h1, h2 {
     color: color-mix(in srgb, plum, #f00, 10%);
+    font-family: var(--font-heading, 'Verdana', sans-serif); /* Custom font with fallback */
 }
 
 #position {
@@ -90,6 +95,7 @@ pre {
     border-radius: 5px;
     flex: 1;
     color: #4a5568;
+    font-family: var(--font-main, 'Arial', sans-serif); /* Custom font with fallback */
 }
 
 /* Blockquote */
@@ -100,6 +106,7 @@ blockquote {
     padding: 1rem;
     background-color: var(--secondary-color, #e2e8f0);
     border-left: 5px solid var(--primary-color, #2c5282);
+    font-family: var(--font-main, 'Arial', sans-serif); /* Custom font with fallback */
     color: #4a5568;
 }
 
@@ -110,6 +117,7 @@ footer {
     background-color: var(--primary-color, #2c5282);
     color: white;
     margin-top: 2rem;
+    font-family: var(--font-main, 'Arial', sans-serif); /* Custom font with fallback */
 }
 
 /* Subtle Animation */
@@ -149,6 +157,7 @@ header, main, footer {
     main {
         max-width: 90%;
     }
+    
 }
 
 /* Small Screens */
@@ -166,8 +175,10 @@ header, main, footer {
     }
 
     pre {
-        font-size: 12px;  
-        padding: 10px;    
+        font-size: 14px; /* Slightly larger font size for better readability */
+        padding: 10px;
+        white-space: pre-wrap; /* Ensure text wraps */
+        word-wrap: break-word; /* Break long words */
     }
     
 }
