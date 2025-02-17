@@ -16,14 +16,6 @@ body {
     color: var(--text-color, #2d3748);
 }
 
-/* Custom Fonts with Fallback */
-@font-face {
-    font-family: 'Poppins';
-    src: url('Poppins-Regular.woff2') format('woff2'),
-         url('Poppins-Regular.woff') format('woff');
-    font-display: swap;
-}
-
 header {
     background-color: var(--primary-color, #2c5282);
     color: white;

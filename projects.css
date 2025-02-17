@@ -1,0 +1,177 @@
+/* CSS Variables with fallbacks */
+:root {
+    --primary-color: #1a73e8; /* A modern blue */
+    --secondary-color: #34a853; /* A fresh green */
+    --background-color: #f8f9fa; /* Light background */
+    --text-color: #202124; /* Dark text for contrast */
+    --font-family: 'Roboto', sans-serif;
+    --font-size-base: 1rem;
+    --spacing-unit: 1em;
+}
+
+body {
+    font-family: var(--font-family), Arial, sans-serif;
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Relative units */
+h1{
+    text-align: center;
+}
+
+h1, h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-unit);
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-unit);
+}
+
+/* Dynamic viewport units */
+main {
+    padding: 5dvh 5dvw;
+}
+
+/* NASA Image Styling */
+#nasapic {
+    border-radius: 8px;
+    width: 100%; /* Responsive width */
+    max-width: 400px; /* Maximum size */
+    height: auto; /* Maintain aspect ratio */
+    border: 1px solid #ddd;
+}
+
+#regencypic {
+    border-radius: 8px;
+    width: 100%; /* Responsive width */
+    max-width: 400px; /* Maximum size */
+    height: auto; /* Maintain aspect ratio */
+    border: 1px solid #ddd;
+}
+
+#webvideo {
+    border-radius: 8px;
+    width: 100%; /* Responsive width */
+    max-width: 400px; /* Maximum size */
+    height: auto; /* Maintain aspect ratio */
+    border: 1px solid #ddd;
+}
+
+#website {
+    border: 1px solid #ddd;
+    padding: var(--spacing-unit);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-unit);
+}
+
+#homepage {
+    text-align: center;
+    width: 100px; /* Adjust width as needed */
+    height: 40px; /* Adjust height to make it rectangular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black; /* Optional: Adds a border */
+    background-color: lightgray; /* Optional: Adds background color */
+    margin: auto; /* Centers the box */
+    padding: 5px; /* Adjust padding */
+    border-radius: 5px; /* Optional: Adds rounded corners */
+}
+
+#homepage a {
+    text-decoration: none; /* Removes underline */
+    color: black; /* Adjust text color */
+    font-weight: bold; /* Makes text bold */
+}
+
+#homepage:hover {
+    background-color: darkgray; /* Changes background on hover */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    :root {
+        --font-size-base: 0.9rem;
+    }
+
+    #nasa, #regency, #website {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    #nasapic, #regencypic, #webvideo {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --font-size-base: 0.8rem;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    #homepage {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Wider gamut color and color-mix */
+#homepage {
+    background-color: color-mix(in srgb, var(--primary-color), white 20%);
+    color: white;
+    border-radius: 8px;
+}
+
+/* New selectors like has() */
+section:has(img) {
+    border: 1px solid #ddd;
+    padding: var(--spacing-unit);
+    border-radius: 8px;
+}
+
+/* Nested and Scoped CSS */
+main {
+    & section {
+        margin-bottom: var(--spacing-unit);
+    }
+
+    & h2 {
+        color: var(--primary-color);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: var(--spacing-unit);
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Subtle Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header, main, footer {
+    animation: fadeIn 1s ease-in-out;
+}
+
