@@ -1,0 +1,124 @@
+/* CSS Variables with Fallbacks */
+:root {
+    --primary-color: #444;
+    --secondary-color: #e7e7e7;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --hover-color: color-mix(in srgb, var(--primary-color) 80%, white 20%);
+}
+
+body {
+    font-family: 'CustomFont', Arial, sans-serif;
+    background-color: var(--background-color, #f4f4f4);
+    color: var(--text-color, #333);
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+/* Container with Responsive Width */
+.container {
+    max-width: 80vw; /* Responsive width */
+    margin: auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--card-shadow);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styles */
+h1, h2 {
+    color: var(--primary-color, #444);
+    text-align: center;
+}
+h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+h2 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    background: var(--secondary-color);
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 4px;
+    transition: background 0.3s ease-in-out;
+}
+ul li:hover {
+    background: var(--hover-color);
+}
+
+#homepage {
+    text-align: center;
+    width: 100px; /* Adjust width as needed */
+    height: 40px; /* Adjust height to make it rectangular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black; /* Optional: Adds a border */
+    background-color: lightgray; /* Optional: Adds background color */
+    margin: auto; /* Centers the box */
+    padding: 5px; /* Adjust padding */
+    border-radius: 5px; /* Optional: Adds rounded corners */
+}
+
+#homepage a {
+    text-decoration: none; /* Removes underline */
+    color: black; /* Adjust text color */
+    font-weight: bold; /* Makes text bold */
+}
+
+#homepage:hover {
+    background-color: darkgray; /* Changes background on hover */
+}
+
+/* Dynamic Viewport Units for Small Screens */
+@media (max-width: 600px) {
+    body {
+        padding: 5dvw;
+    }
+    .container {
+        max-width: 90dvw;
+        padding: 1.5rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animation Example */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.container {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* New CSS Selectors */
+.container:has(h1) {
+    border: 2px solid var(--primary-color);
+}
