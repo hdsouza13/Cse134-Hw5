@@ -1,9 +1,9 @@
 /* CSS Variables with fallbacks */
 :root {
-    --primary-color: #1a73e8; /* A modern blue */
-    --secondary-color: #34a853; /* A fresh green */
-    --background-color: #f8f9fa; /* Light background */
-    --text-color: #202124; /* Dark text for contrast */
+    --primary-color: #1a73e8; 
+    --secondary-color: #34a853; 
+    --background-color: #f8f9fa; 
+    --text-color: #202124; 
     --font-family: 'Roboto', sans-serif;
     --font-size-base: 1rem;
     --spacing-unit: 1em;
@@ -19,7 +19,6 @@ body {
     color: var(--text-color);
 }
 
-/* Relative units */
 h1{
     text-align: center;
 }
@@ -34,33 +33,31 @@ p {
     margin-bottom: var(--spacing-unit);
 }
 
-/* Dynamic viewport units */
 main {
     padding: 5dvh 5dvw;
 }
 
-/* NASA Image Styling */
 #nasapic {
     border-radius: 8px;
-    width: 100%; /* Responsive width */
-    max-width: 400px; /* Maximum size */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    max-width: 400px;
+    height: auto;
     border: 1px solid #ddd;
 }
 
 #regencypic {
     border-radius: 8px;
-    width: 100%; /* Responsive width */
-    max-width: 400px; /* Maximum size */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; 
+    max-width: 400px; 
+    height: auto; 
     border: 1px solid #ddd;
 }
 
 #webvideo {
     border-radius: 8px;
-    width: 100%; /* Responsive width */
-    max-width: 400px; /* Maximum size */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    max-width: 400px; 
+    height: auto; 
     border: 1px solid #ddd;
 }
 
@@ -73,29 +70,29 @@ main {
 
 #homepage {
     text-align: center;
-    width: 100px; /* Adjust width as needed */
-    height: 40px; /* Adjust height to make it rectangular */
+    width: 100px; 
+    height: 40px; 
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid black; /* Optional: Adds a border */
-    background-color: lightgray; /* Optional: Adds background color */
-    margin: auto; /* Centers the box */
-    padding: 5px; /* Adjust padding */
-    border-radius: 5px; /* Optional: Adds rounded corners */
+    border: 2px solid black;
+    background-color: lightgray; 
+    margin: auto; 
+    padding: 5px; 
+    border-radius: 5px; 
 }
 
 #homepage a {
-    text-decoration: none; /* Removes underline */
-    color: black; /* Adjust text color */
-    font-weight: bold; /* Makes text bold */
+    text-decoration: none; 
+    color: black;
+    font-weight: bold;
 }
 
 #homepage:hover {
-    background-color: darkgray; /* Changes background on hover */
+    background-color: darkgray; 
 }
 
-/* Media Queries for Responsive Design */
+/* Responsive Design */
 @media (max-width: 768px) {
     :root {
         --font-size-base: 0.9rem;
@@ -112,6 +109,7 @@ main {
     }
 }
 
+/* Small Screens */
 @media (max-width: 480px) {
     :root {
         --font-size-base: 0.8rem;
@@ -127,7 +125,6 @@ main {
     }
 }
 
-/* Wider gamut color and color-mix */
 #homepage {
     background-color: color-mix(in srgb, var(--primary-color), white 20%);
     color: white;
@@ -159,7 +156,6 @@ footer {
     color: white;
 }
 
-/* Subtle Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;

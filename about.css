@@ -16,9 +16,8 @@ body {
     padding: 2rem;
 }
 
-/* Container with Responsive Width */
 .container {
-    max-width: 80vw; /* Responsive width */
+    max-width: 80vw; 
     margin: auto;
     background: #fff;
     padding: 2rem;
@@ -31,7 +30,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Header Styles */
 h1, h2 {
     color: var(--primary-color, #444);
     text-align: center;
@@ -46,7 +44,6 @@ h2 {
     margin-top: 2rem;
 }
 
-/* List Styles */
 ul {
     list-style-type: none;
     padding: 0;
@@ -64,30 +61,47 @@ ul li:hover {
 
 #homepage {
     text-align: center;
-    width: 100px; /* Adjust width as needed */
-    height: 40px; /* Adjust height to make it rectangular */
+    width: 100px;
+    height: 40px; 
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid black; /* Optional: Adds a border */
-    background-color: lightgray; /* Optional: Adds background color */
-    margin: auto; /* Centers the box */
-    padding: 5px; /* Adjust padding */
-    border-radius: 5px; /* Optional: Adds rounded corners */
+    border: 2px solid black; 
+    background-color: lightgray; 
+    margin: auto; 
+    padding: 5px; 
+    border-radius: 5px; 
 }
 
 #homepage a {
-    text-decoration: none; /* Removes underline */
-    color: black; /* Adjust text color */
-    font-weight: bold; /* Makes text bold */
+    text-decoration: none;
+    color: black; 
+    font-weight: bold; 
 }
 
 #homepage:hover {
-    background-color: darkgray; /* Changes background on hover */
+    background-color: darkgray; 
 }
 
-/* Dynamic Viewport Units for Small Screens */
-@media (max-width: 600px) {
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 3rem;
+    }
+    .container {
+        max-width: 90dvw;
+        padding: 1.5rem;
+    }
+    h1 {
+        font-size: 1.9rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Small Screens */
+@media (max-width: 480px) {
     body {
         padding: 5dvw;
     }
@@ -103,7 +117,6 @@ ul li:hover {
     }
 }
 
-/* Animation Example */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -114,6 +127,7 @@ ul li:hover {
         transform: translateY(0);
     }
 }
+
 .container {
     animation: fadeIn 0.5s ease-in-out;
 }

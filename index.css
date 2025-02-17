@@ -6,8 +6,8 @@
     --secondary-color: #e2e8f0;
     --accent-color: color-mix(in srgb, white, lightblue 40%);
     --text-color: #2d3748;
-    --font-main: 'Roboto', 'Arial', sans-serif; /* Custom font with fallback */
-    --font-heading: 'Poppins', 'Verdana', sans-serif; /* Custom font with fallback */
+    --font-main: 'Roboto', 'Arial', sans-serif; 
+    --font-heading: 'Poppins', 'Verdana', sans-serif; 
 }
 
 body {
@@ -27,8 +27,8 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: clamp(2rem, 5vw, 2.5em); /* Responsive font size */
-    font-family: var(--font-heading, 'Verdana', sans-serif); /* Custom font with fallback */
+    font-size: clamp(2rem, 5vw, 2.5em); 
+    font-family: var(--font-heading, 'Verdana', sans-serif); 
 }
 
 /* Responsive Navigation */
@@ -48,7 +48,7 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-family: var(--font-heading, 'Verdana', sans-serif); /* Custom font with fallback */
+    font-family: var(--font-heading, 'Verdana', sans-serif); 
     font-weight: bold;
     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
@@ -58,17 +58,15 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-/* Main Content */
 main {
     padding: 2rem;
     max-width: 80%;
     margin: 0 auto;
 }
 
-/* Using Viewport Units */
 h1, h2 {
     color: color-mix(in srgb, plum, #f00, 10%);
-    font-family: var(--font-heading, 'Verdana', sans-serif); /* Custom font with fallback */
+    font-family: var(--font-heading, 'Verdana', sans-serif);
 }
 
 #position {
@@ -86,7 +84,6 @@ h1, h2 {
     border: 3px solid #2c5282;
 }
 
-/* Code Block Styling */
 pre {
     font-size: 1.2em;
     line-height: 1.6;
@@ -95,10 +92,10 @@ pre {
     border-radius: 5px;
     flex: 1;
     color: #4a5568;
-    font-family: var(--font-main, 'Arial', sans-serif); /* Custom font with fallback */
+    font-family: var(--font-main, 'Arial', sans-serif); 
 }
 
-/* Blockquote */
+
 blockquote {
     font-style: italic;
     text-align: center;
@@ -106,21 +103,21 @@ blockquote {
     padding: 1rem;
     background-color: var(--secondary-color, #e2e8f0);
     border-left: 5px solid var(--primary-color, #2c5282);
-    font-family: var(--font-main, 'Arial', sans-serif); /* Custom font with fallback */
+    font-family: var(--font-main, 'Arial', sans-serif); 
     color: #4a5568;
 }
 
-/* Footer */
+
 footer {
     text-align: center;
     padding: 1rem;
     background-color: var(--primary-color, #2c5282);
     color: white;
     margin-top: 2rem;
-    font-family: var(--font-main, 'Arial', sans-serif); /* Custom font with fallback */
+    font-family: var(--font-main, 'Arial', sans-serif); 
 }
 
-/* Subtle Animation */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -175,10 +172,10 @@ header, main, footer {
     }
 
     pre {
-        font-size: 14px; /* Slightly larger font size for better readability */
+        font-size: 14px; 
         padding: 10px;
-        white-space: pre-wrap; /* Ensure text wraps */
-        word-wrap: break-word; /* Break long words */
+        white-space: pre-wrap; 
+        word-wrap: break-word; 
     }
     
 }
