@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Form</title>
+</head>
+<body>
+    <main>
+        <form id="contact-form" action="https://httpbin.org/post" method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id= "name">
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+            <br>
+            <label for="comments">Comment:</label>
+            <textarea name="comments" id="comments" cols="80" rows="5">Put your comment here</textarea>
+            <br>
+            <output id="error-output"></output>
+            <output id="info-output"></output>
+            <button type="submit">Submit</button> 
+        </form>
+
+        <script>
+            document.getElementById("contact-form").addEventListener("submit", function(event) {
+              let errors = [];
+        
+              // Clear previous outputs
+              document.getElementById("error-output").textContent = "";
+              document.getElementById("info-output").textContent = "";
+        
+              // Name validation
+              const name = document.getElementById("name").value.trim();
+              if (name.length < 2) {
+                errors.push("Name must be at least 2 characters.");
+              }
+        
+              // Email validation
+              const email = document.getElementById("email").value.trim();
+              const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!emailPattern.test(email)) {
+                errors.push("Enter a valid email address.");
+              }
+        
+              // Comments validation
+              const comments = document.getElementById("comments").value.trim();
+              if (comments.length < 2) {
+                errors.push("Comment should be at least 2 characters.");
+              }
+        
+              if (errors.length > 0) {
+                event.preventDefault(); // Prevent form submission
+                document.getElementById("error-output").textContent = errors.join(" ");
+                document.getElementById("info-output").textContent = "Please fix the errors before submitting.";
+              } else {
+                document.getElementById("info-output").textContent = "Submitting your form...";
+              }
+            });
+        </script>
+    </main>
+</body>
+</html>

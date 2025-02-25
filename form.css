@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  input, textarea {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+    output {
+      font-style: italic;
+      display: block;
+      min-height: 16px;
+    }
+    #error-output {
+      color: red;
+    }
+    #info-output {
+      color: blue;
+    }
