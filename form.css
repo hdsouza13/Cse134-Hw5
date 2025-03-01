@@ -46,3 +46,12 @@ input:invalid, textarea:invalid {
 input:required:valid, textarea:required:valid {
   border-color: green;
 }
+
+.error-flash {
+  animation: flash 0.5s;
+}
+
+@keyframes flash {
+  0% { background-color: #ffcccc; }
+  100% { background-color: white; }
+}

@@ -7,58 +7,112 @@
     <title>Form</title>
 </head>
 <body>
-    <main>
-        <form id="contact-form" action="https://httpbin.org/post" method="post">
-            <label for="name">Name:</label>
-            <input type="text" name="name" id= "name">
-            <br>
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email">
-            <br>
-            <label for="comments">Comment:</label>
-            <textarea name="comments" id="comments" cols="80" rows="5">Put your comment here</textarea>
-            <br>
-            <output id="error-output"></output>
-            <output id="info-output"></output>
-            <button type="submit">Submit</button> 
-        </form>
+  <main>
+      <form id="contact-form" action="https://httpbin.org/post" method="post">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" pattern="[A-Za-z\s]+" required minlength="2" required>
+          <br>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required>
+          <br>
+          <label for="comments">Comment:</label>
+          <textarea name="comments" id="comments" cols="80" rows="5"  minlength="2" maxlength="200" pattern= "[A-Za-z0-9 .,!?]+" required>Put your comment here</textarea>
+          <br>
+          <output id="error-output"></output>
+          <output id="info-output"></output>
+          <button type="submit">Submit</button> 
+      </form>
 
-        <script>
-            document.getElementById("contact-form").addEventListener("submit", function(event) {
+      <script>
+          document.getElementById("contact-form").addEventListener("submit", function(event) {
               let errors = [];
-        
+              let form_errors = []; // Array to store error details
+
               // Clear previous outputs
               document.getElementById("error-output").textContent = "";
               document.getElementById("info-output").textContent = "";
-        
+
               // Name validation
               const name = document.getElementById("name").value.trim();
               if (name.length < 2) {
-                errors.push("Name must be at least 2 characters.");
+                  errors.push("Name must be at least 2 characters.");
+                  form_errors.push({ field: "name", message: "Name must be at least 2 characters." });
               }
-        
+
               // Email validation
               const email = document.getElementById("email").value.trim();
               const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
               if (!emailPattern.test(email)) {
-                errors.push("Enter a valid email address.");
+                  errors.push("Enter a valid email address.");
+                  form_errors.push({ field: "email", message: "Enter a valid email address." });
               }
-        
+
               // Comments validation
               const comments = document.getElementById("comments").value.trim();
               if (comments.length < 2) {
-                errors.push("Comment should be at least 2 characters.");
+                  errors.push("Comment should be at least 2 characters.");
+                  form_errors.push({ field: "comments", message: "Comment should be at least 2 characters." });
               }
-        
+
               if (errors.length > 0) {
-                event.preventDefault(); // Prevent form submission
-                document.getElementById("error-output").textContent = errors.join(" ");
-                document.getElementById("info-output").textContent = "Please fix the errors before submitting.";
+                  event.preventDefault(); // Prevent form submission
+                  document.getElementById("error-output").textContent = errors.join(" ");
+                  document.getElementById("info-output").textContent = "Please fix the errors before submitting.";
               } else {
-                document.getElementById("info-output").textContent = "Submitting your form...";
+                  document.getElementById("info-output").textContent = "Submitting your form...";
+
+                  // Submit form with form_errors as JSON
+                  const formData = new FormData(document.getElementById("contact-form"));
+                  formData.append("form-errors", JSON.stringify(form_errors));
+
+                  fetch("https://httpbin.org/post", {
+                      method: "POST",
+                      body: formData
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                      console.log("Form submission successful:", data);
+                      document.getElementById("info-output").textContent = "Form submitted successfully!";
+                  })
+                  .catch(error => {
+                      console.error("Error submitting form:", error);
+                      document.getElementById("info-output").textContent = "Error submitting form. Please try again later.";
+                  });
               }
-            });
-        </script>
-    </main>
+          });
+
+          // Masking mechanism
+          const nameInput = document.getElementById("name");
+          const namePattern = /^[A-Za-z\s]+$/;
+          nameInput.addEventListener("input", function() {
+              if (!namePattern.test(this.value)) {
+                  this.classList.add("error-flash");
+                  document.getElementById("error-output").textContent = "Invalid character entered in name field.";
+                  setTimeout(() => {
+                      this.classList.remove("error-flash");
+                      document.getElementById("error-output").textContent = "";
+                  }, 2000);
+                  this.setCustomValidity("Invalid character entered.");
+              } else {
+                  this.setCustomValidity("");
+              }
+          });
+
+          // Character countdown for comments textarea
+          const commentsTextarea = document.getElementById("comments");
+          const maxChars = parseInt(commentsTextarea.getAttribute("maxlength"), 10);
+          commentsTextarea.addEventListener("input", function() {
+              const remainingChars = maxChars - this.value.length;
+              if (remainingChars < 10) {
+                  document.getElementById("info-output").textContent = `Warning: ${remainingChars} characters remaining.`;
+                  if (remainingChars < 0) {
+                      document.getElementById("info-output").textContent = `Error: ${Math.abs(remainingChars)} characters over limit!`;
+                  }
+              } else {
+                  document.getElementById("info-output").textContent = "";
+              }
+          });
+      </script>
+  </main>
 </body>
 </html>
