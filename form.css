@@ -36,3 +36,13 @@ body {
     #info-output {
       color: blue;
     }
+
+
+/* Error handling for validation */
+input:invalid, textarea:invalid {
+  border-color: red;
+}
+
+input:required:valid, textarea:required:valid {
+  border-color: green;
+}
