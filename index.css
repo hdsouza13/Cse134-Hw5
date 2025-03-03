@@ -179,3 +179,100 @@ header, main, footer {
     }
     
 }
+
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --input-border: #444;
+    --button-bg: #1E90FF;
+    --button-text: #ffffff;
+    --font-family: Arial, sans-serif;
+  }
+  
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s, font-family 0.3s;
+  }
+  
+form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+input, textarea {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+#theme-toggle {
+    color: #007BFF;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 4px black;
+  }
+  
+  #theme-customizer {
+    position: fixed; 
+    top: 80px; 
+    right: 10px;
+    background: var(--bg-color);
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; 
+    max-width: 250px;
+}
+
+#theme-customizer label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#theme-customizer input, #theme-customizer select {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#reset-theme {
+    background-color: #ff4444;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%; 
+}
+
+#reset-theme:hover {
+    background-color: #cc0000;
+}
+  

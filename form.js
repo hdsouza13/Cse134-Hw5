@@ -86,7 +86,7 @@ commentsTextarea.addEventListener("input", function() {
     }
 });
 
-// Dark mode toggle
+
 document.addEventListener("DOMContentLoaded", () => {
     const themeToggle = document.getElementById("theme-toggle");
     const themeCustomizer = document.getElementById("theme-customizer");
@@ -101,10 +101,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentTheme = localStorage.getItem("theme") || "light";
     let customThemes = JSON.parse(localStorage.getItem("customThemes")) || {};
 
-    // Apply the current theme
+
     applyTheme(currentTheme);
 
-    // Populate the theme selector with custom themes
+    
     populateThemeSelector();
 
     themeToggle.addEventListener("click", () => {
@@ -128,11 +128,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     resetThemeButton.addEventListener("click", () => {
-        // Reset to default light theme
         applyTheme("light");
         localStorage.setItem("theme", "light");
         themeToggle.textContent = "Light";
-        themeSelector.value = "light"; // Update the selector to show "Light"
+        themeSelector.value = "light"; 
     });
 
     themeSelector.addEventListener("change", () => {
@@ -142,13 +141,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function applyTheme(theme) {
         if (theme === "light" || theme === "dark") {
-            // Reset CSS variables to default values for light/dark mode
             document.documentElement.setAttribute("data-theme", theme);
             document.documentElement.style.removeProperty("--bg-color");
             document.documentElement.style.removeProperty("--text-color");
             document.documentElement.style.removeProperty("--font-family");
         } else if (customThemes[theme]) {
-            // Apply custom theme
             const customTheme = customThemes[theme];
             document.documentElement.setAttribute("data-theme", "custom");
             document.documentElement.style.setProperty("--bg-color", customTheme.bgColor);
