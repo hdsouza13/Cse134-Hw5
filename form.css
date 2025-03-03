@@ -5,37 +5,37 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-  }
+}
 
-  form {
+form {
     width: 300px;
     display: flex;
     flex-direction: column;
-  }
+}
 
-  label {
+label {
     margin-bottom: 8px;
     font-weight: bold;
-  }
+}
 
-  input, textarea {
+input, textarea {
     padding: 8px;
     margin-bottom: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
+}
 
-    output {
+output {
       font-style: italic;
       display: block;
       min-height: 16px;
-    }
-    #error-output {
+}
+#error-output {
       color: red;
-    }
-    #info-output {
+}
+#info-output {
       color: blue;
-    }
+}
 
 
 /* Error handling for validation */
