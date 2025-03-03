@@ -55,3 +55,68 @@ input:required:valid, textarea:required:valid {
   0% { background-color: #ffcccc; }
   100% { background-color: white; }
 }
+
+/* CSS Variables for Light and Dark Mode */
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --input-border: #ccc;
+  --button-bg: #007BFF;
+  --button-text: white;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --input-border: #444;
+  --button-bg: #1E90FF;
+  --button-text: #ffffff;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#theme-toggle {
+  color: #007BFF;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 4px black;
+}
