@@ -63,18 +63,22 @@ input:required:valid, textarea:required:valid {
   --input-border: #ccc;
   --button-bg: #007BFF;
   --button-text: white;
+  --font-family: Arial, sans-serif;
 }
 
+
+/* Dark Mode */
 [data-theme="dark"] {
   --bg-color: #121212;
   --text-color: #e0e0e0;
   --input-border: #444;
   --button-bg: #1E90FF;
   --button-text: #ffffff;
+  --font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-family);
   background-color: var(--bg-color);
   color: var(--text-color);
   display: flex;
@@ -83,7 +87,7 @@ body {
   justify-content: center;
   height: 100vh;
   margin: 0;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, font-family 0.3s;
 }
 
 form {
@@ -120,3 +124,38 @@ button {
   cursor: pointer;
   border: 4px black;
 }
+
+#theme-customizer {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: var(--bg-color);
+  padding: 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#theme-customizer label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#theme-customizer input, #theme-customizer select {
+  margin-bottom: 10px;
+}
+
+#reset-theme {
+  background-color: #ff4444;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#reset-theme:hover {
+  background-color: #cc0000;
+}
+

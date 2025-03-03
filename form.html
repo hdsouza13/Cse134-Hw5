@@ -8,6 +8,29 @@
 </head>
 <body>
     <button id="theme-toggle">Mode</button>
+    <div id="theme-customizer">
+        <h3>Customize Theme</h3>
+        <label for="theme-name">Theme Name:</label>
+        <input type="text" id="theme-name" placeholder="Enter theme name">
+        <label for="bg-color-picker">Background Color:</label>
+        <input type="color" id="bg-color-picker">
+        <label for="text-color-picker">Text Color:</label>
+        <input type="color" id="text-color-picker">
+        <label for="font-selector">Font:</label>
+        <select id="font-selector">
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Georgia, serif">Georgia</option>
+            <option value="Courier New, monospace">Courier New</option>
+            <option value="Times New Roman, serif">Times New Roman</option>
+        </select>
+        <button id="save-theme">Save Theme</button>
+        <button id="reset-theme">Reset to Default</button> <!-- New Reset Button -->
+        <label for="theme-selector">Select Theme:</label>
+        <select id="theme-selector">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+        </select>
+    </div>
   <main>
       <form id="contact-form" action="https://httpbin.org/post" method="post" novalidate>
           <label for="name">Name:</label>
