@@ -156,12 +156,17 @@ function loadLocal() {
 
 function loadRemote() {
     const projectsContainer = document.getElementById('projects-container');
-    fetch('https://my-json-server.typicode.com/hdsouza13/Cse134-hw5db')
+    fetch('https://api.jsonbin.io/v3/b/67d67ba98a456b796676c1f6')
         .then(response => response.json())
-        .then(projects => {
+        .then(data => {
+            console.log('Fetched data:', data); 
+            
+            const projects = data.record || data; 
             if (projects && projects.length > 0) {
                 projectsContainer.innerHTML = '';
                 projects.forEach(project => {
+                    console.log('Processing project:', project); 
+                    
                     const projectCard = document.createElement('project-card');
                     projectCard.classList.add('project');
                     projectCard.setAttribute('project', project.project);
@@ -172,6 +177,8 @@ function loadRemote() {
 
                     projectsContainer.appendChild(projectCard);
                 });
+            } else {
+                console.error('No projects found in API response.');
             }
         })
         .catch(error => console.error('Error fetching remote projects:', error));
