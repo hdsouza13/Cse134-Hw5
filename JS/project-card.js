@@ -155,7 +155,7 @@ function loadLocal() {
 }
 function loadRemote() {
     const projectsContainer = document.getElementById('projects-container');
-    fetch('https://my-json-server.typicode.com/hdsouza13/Cse134-hw5db/db')
+    fetch('https://my-json-server.typicode.com/hdsouza13/Cse134-hw5db/projects')
         .then(response => response.json())
         .then(data => {
             console.log(data); // Debugging: log the entire response
