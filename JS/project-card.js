@@ -139,12 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    // Save example data to localStorage
     localStorage.setItem('projects', JSON.stringify(localData));
 
-    // Function to create project cards
     function createProjectCards(data) {
-        projectsContainer.innerHTML = ''; // Clear existing cards
+        projectsContainer.innerHTML = ''; 
         data.forEach(item => {
             const card = document.createElement('project-card');
             card.setAttribute('project', item.project);
@@ -156,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Load data from localStorage
     loadLocalBtn.addEventListener('click', () => {
         const data = JSON.parse(localStorage.getItem('projects'));
         if (data) {
@@ -166,17 +163,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Load data from remote server
     loadRemoteBtn.addEventListener('click', () => {
-        // Replace with your JSONBin or My JSON Server URL
-        const remoteUrl =  'https://my-json-server.typicode.com/hdsouza13/Cse134-Hw5' // Example JSONBin URL
-        // const remoteUrl = 'https://my-json-server.typicode.com/your-username/your-repo/projects'; // Example My JSON Server URL
+        const remoteUrl =  'https://my-json-server.typicode.com/hdsouza13/Cse134-Hw5' 
 
         fetch(remoteUrl)
             .then(response => response.json())
             .then(data => {
-                // Assuming the data structure matches the local data
-                createProjectCards(data.record || data); // Adjust based on the API response structure
+                createProjectCards(data.record || data); 
             })
             .catch(error => {
                 console.error('Error fetching remote data:', error);
