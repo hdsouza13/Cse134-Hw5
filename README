@@ -1,19 +1,14 @@
 ### Index.html
-
 Implemented a underline line under the links, so it will be easier to the user see on which link he will open
 
 ### Contact.css
-
 The send button was vanishing because of the backgroud, so I fix it and put a little of animation on it
 
 ###Comments
-
 Implement some comments in the html files, so it will be more organized
 
 ###Folders 
-
 I organized my files into CSS, HTML and JS folders
 
 ###Theme mode 
-
 I used the same js code for the theme modes, but implemented the same code for all pages, but using different js files, so I created a single js file for the theme mode, and I also implemented a button to open and close the mode settings window.
