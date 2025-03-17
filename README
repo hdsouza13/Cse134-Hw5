@@ -1,14 +1,40 @@
-### Index.html
-Implemented a underline line under the links, so it will be easier to the user see on which link he will open
+## **Updates and Improvements**
 
-### Contact.css
-The send button was vanishing because of the backgroud, so I fix it and put a little of animation on it
+### **1. Index.html**
+- **Underline for Links**:  
+  Added an underline under the navigation links to make it easier for users to identify which link they are interacting with.  
+  Improves user experience and accessibility.
 
-###Comments
-Implement some comments in the html files, so it will be more organized
+---
 
-###Folders 
-I organized my files into CSS, HTML and JS folders
+### **2. Contact.css**
+- **Send Button Fix**:  
+  Fixed the issue where the "Send" button was vanishing due to background conflicts.  
+  Added a subtle animation to the button to enhance interactivity and visual appeal.
 
-###Theme mode 
-I used the same js code for the theme modes, but implemented the same code for all pages, but using different js files, so I created a single js file for the theme mode, and I also implemented a button to open and close the mode settings window.
+---
+
+### **3. Comments in HTML Files**
+- **Code Organization**:  
+  Added comments to the HTML files to make the code more organized and easier to understand.  
+  Comments help in maintaining and updating the code in the future.
+
+---
+
+### **4. Folder Structure**
+- **Reorganized Files**:  
+  Organized all files into separate folders for better structure:  
+    - **CSS**: Contains all stylesheets.  
+    - **HTML**: Contains all HTML files.  
+    - **JS**: Contains all JavaScript files.  
+  Improves project maintainability and scalability.
+
+---
+
+### **5. Theme Mode**
+- **Improved Theme Mode Implementation**:  
+  Used the same JavaScript code for theme modes across all pages.  
+  Created a single JavaScript file (`theme.js`) for the theme mode functionality to avoid code duplication.  
+  Added a button to open and close the theme settings window for better user interaction.
+
+---
