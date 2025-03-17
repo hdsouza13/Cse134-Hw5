@@ -78,6 +78,30 @@ button:hover {
     transform: scale(1.05); 
 }
 
+#toggle-customizer {
+    margin-right: 10px;
+    border: 1px solid black;
+    padding: 5px 10px; 
+    cursor: pointer;
+}
+
+#theme-toggle {
+    border: 1px solid black; 
+    padding: 5px 10px; 
+    cursor: pointer; 
+}
+
+#theme-customizer {
+    display: none; 
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid black; 
+}
+
+#theme-customizer.visible {
+    display: block; 
+}
+
 #homepage {
     text-align: center;
     width: 100px; 
