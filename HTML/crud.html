@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input, textarea, button {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 8px;
+        }
+        .project-list {
+            margin-top: 20px;
+        }
+        .project-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .project-item h3 {
+            margin: 0;
+        }
+        .project-item p {
+            margin: 5px 0;
+        }
+        .project-item button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manage Projects</h1>
+
+    <!-- Form for adding/editing projects -->
+    <form id="project-form">
+        <input type="text" id="project-name" placeholder="Project Name" required>
+        <input type="text" id="project-img-src" placeholder="Image URL">
+        <textarea id="project-description" placeholder="Project Description" required></textarea>
+        <input type="text" id="project-link" placeholder="Project Link">
+        <button type="submit" id="submit-btn">Add Project</button>
+        <button type="button" id="cancel-edit-btn" style="display: none;">Cancel Edit</button>
+    </form>
+
+    <!-- List of projects -->
+    <div class="project-list" id="project-list"></div>
+
+    <script>
+        // Load projects from localStorage
+        let projects = JSON.parse(localStorage.getItem('projects')) || [];
+        let editIndex = null;
+
+        // Function to render projects
+        function renderProjects() {
+            const projectList = document.getElementById('project-list');
+            projectList.innerHTML = '';
+
+            projects.forEach((project, index) => {
+                const projectItem = document.createElement('div');
+                projectItem.classList.add('project-item');
+                projectItem.innerHTML = `
+                    <h3>${project.project}</h3>
+                    <p>${project.description}</p>
+                    <img src="${project.imgSrc}" alt="${project.imgAlt}" width="50">
+                    <a href="${project.link}" target="_blank">Learn More</a>
+                    <button onclick="editProject(${index})">Edit</button>
+                    <button onclick="deleteProject(${index})">Delete</button>
+                `;
+                projectList.appendChild(projectItem);
+            });
+        }
+
+        // Function to add or update a project
+        document.getElementById('project-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const projectName = document.getElementById('project-name').value;
+            const projectImgSrc = document.getElementById('project-img-src').value;
+            const projectDescription = document.getElementById('project-description').value;
+            const projectLink = document.getElementById('project-link').value;
+
+            if (editIndex !== null) {
+                // Update existing project
+                projects[editIndex] = {
+                    project: projectName,
+                    imgSrc: projectImgSrc,
+                    imgAlt: `Image of ${projectName} logo`,
+                    description: projectDescription,
+                    link: projectLink
+                };
+                editIndex = null;
+                document.getElementById('cancel-edit-btn').style.display = 'none';
+            } else {
+                // Add new project
+                projects.push({
+                    project: projectName,
+                    imgSrc: projectImgSrc,
+                    imgAlt: `Image of ${projectName} logo`,
+                    description: projectDescription,
+                    link: projectLink
+                });
+            }
+
+            localStorage.setItem('projects', JSON.stringify(projects));
+            renderProjects();
+            this.reset();
+        });
+
+        // Function to edit a project
+        function editProject(index) {
+            const project = projects[index];
+            document.getElementById('project-name').value = project.project;
+            document.getElementById('project-img-src').value = project.imgSrc;
+            document.getElementById('project-description').value = project.description;
+            document.getElementById('project-link').value = project.link;
+
+            editIndex = index;
+            document.getElementById('cancel-edit-btn').style.display = 'inline-block';
+        }
+
+        // Function to cancel edit
+        document.getElementById('cancel-edit-btn').addEventListener('click', function () {
+            editIndex = null;
+            document.getElementById('project-form').reset();
+            this.style.display = 'none';
+        });
+
+        // Function to delete a project
+        function deleteProject(index) {
+            projects.splice(index, 1);
+            localStorage.setItem('projects', JSON.stringify(projects));
+            renderProjects();
+        }
+
+        // Initial render
+        renderProjects();
+    </script>
+</body>
+</html>
