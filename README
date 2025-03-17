@@ -37,4 +37,8 @@
   Created a single JavaScript file (`theme.js`) for the theme mode functionality to avoid code duplication.  
   Added a button to open and close the theme settings window for better user interaction.
 
+<<<<<<< HEAD
 ---
+=======
+---
+>>>>>>> 6aa3e26bdd41a6db1378140605a2bc78161fb3da
